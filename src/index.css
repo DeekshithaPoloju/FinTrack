@@ -1,5 +1,37 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #0f172a;
+  --sidebar: #111827;
+  --navbar: #1e293b;
+  --card: #1e293b;
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  --income: #22c55e;
+  --expense: #ef4444;
+  --text: #f8fafc;
+  --text-light: #94a3b8;
+  --border: rgba(255,255,255,0.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
 }
