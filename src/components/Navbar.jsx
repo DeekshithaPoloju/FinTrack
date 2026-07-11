@@ -1,7 +1,15 @@
+import { FaBell, FaUserCircle } from "react-icons/fa";
+import "./Navbar.css";
+
 function Navbar() {
   return (
-    <nav>
-      <h1>FinTrack Dashboard</h1>
+    <nav className="navbar">
+      <h2>FinTrack</h2>
+
+      <div className="nav-right">
+        <FaBell className="icon" />
+        <FaUserCircle className="icon" />
+      </div>
     </nav>
   );
 }
