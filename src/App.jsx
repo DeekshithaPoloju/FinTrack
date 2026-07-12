@@ -1,14 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 
+// Authentication Pages
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Dashboard from "./pages/Dashboard";
-import Profile from "./pages/Profile";
+import ForgotPassword from "./pages/ForgotPassword";
+import VerifyOTP from "./pages/VerifyOTP";
+import ResetPassword from "./pages/ResetPassword";
 
-// New Pages
+// Main Pages
+import Dashboard from "./pages/Dashboard";
 import Transactions from "./pages/Transactions";
 import Analytics from "./pages/Analytics";
 import Reports from "./pages/Reports";
+import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 
 function App() {
@@ -21,12 +25,15 @@ function App() {
       {/* Dashboard */}
       <Route path="/dashboard" element={<Dashboard />} />
 
-      {/* Sidebar Pages */}
+      {/* Application Pages */}
       <Route path="/transactions" element={<Transactions />} />
       <Route path="/analytics" element={<Analytics />} />
       <Route path="/reports" element={<Reports />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/settings" element={<Settings />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/verify-otp" element={<VerifyOTP />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
     </Routes>
   );
 }

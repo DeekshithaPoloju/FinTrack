@@ -1,0 +1,57 @@
+.settings-page{
+    padding:30px;
+    background:#0f172a;
+    min-height:100vh;
+}
+
+.settings-card{
+    max-width:700px;
+    margin:auto;
+    background:#1e293b;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.settings-card h1{
+    color:white;
+    margin-bottom:30px;
+}
+
+.setting-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    color:white;
+}
+
+.setting-item select{
+    background:#0f172a;
+    color:white;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #334155;
+}
+
+.settings-card button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#7c3aed,#9333ea);
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+.setting-item input[type="number"]{
+    width:220px;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #334155;
+    background:#0f172a;
+    color:white;
+    font-size:15px;
+}

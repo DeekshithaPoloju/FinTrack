@@ -14,7 +14,6 @@ function Login() {
 
     setError("");
 
-    // Check empty fields
     if (!email || !password) {
       setError("Please enter email and password.");
       return;
@@ -64,13 +63,25 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          {error && <p className="error">{error}</p>}
+          {/* Forgot Password */}
+          <div className="forgot-password">
+            <Link to="/forgot-password">
+              Forgot Password?
+            </Link>
+          </div>
 
           <button type="submit">
             Login
           </button>
 
-          <p>
+          {/* Error Message */}
+          {error && (
+            <p className="error">
+              {error}
+            </p>
+          )}
+
+          <p className="signup-text">
             Don't have an account?{" "}
             <Link to="/signup" className="link">
               Sign Up

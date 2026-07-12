@@ -24,3 +24,25 @@
   color: #94a3b8;
   font-size: 16px;
 }
+
+.welcome{
+    margin-bottom:30px;
+}
+
+.welcome h1{
+    font-size:36px;
+    color:white;
+    margin-bottom:10px;
+}
+
+.welcome h4{
+    color:#94a3b8;
+    font-size:16px;
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+.welcome p{
+    color:#cbd5e1;
+    font-size:16px;
+}

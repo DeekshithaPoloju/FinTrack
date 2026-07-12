@@ -12,7 +12,7 @@ function SummaryCards() {
   const [income, setIncome] = useState(0);
   const [expense, setExpense] = useState(0);
 
-  useEffect(() => {
+  const calculateTotals = () => {
     const transactions =
       JSON.parse(localStorage.getItem("transactions")) || [];
 
@@ -29,6 +29,25 @@ function SummaryCards() {
 
     setIncome(totalIncome);
     setExpense(totalExpense);
+  };
+
+  useEffect(() => {
+    calculateTotals();
+
+    const handleStorage = () => {
+      calculateTotals();
+    };
+
+    window.addEventListener("storage", handleStorage);
+
+    const interval = setInterval(() => {
+      calculateTotals();
+    }, 1000);
+
+    return () => {
+      window.removeEventListener("storage", handleStorage);
+      clearInterval(interval);
+    };
   }, []);
 
   const savings = income - expense;
@@ -37,7 +56,6 @@ function SummaryCards() {
   return (
     <div className="summary-grid">
 
-      {/* Income */}
       <div className="card income-card">
         <div className="card-icon">
           <FaArrowUp />
@@ -50,7 +68,6 @@ function SummaryCards() {
         </div>
       </div>
 
-      {/* Expense */}
       <div className="card expense-card">
         <div className="card-icon">
           <FaArrowDown />
@@ -63,7 +80,6 @@ function SummaryCards() {
         </div>
       </div>
 
-      {/* Savings */}
       <div className="card savings-card">
         <div className="card-icon">
           <FaPiggyBank />
@@ -76,7 +92,6 @@ function SummaryCards() {
         </div>
       </div>
 
-      {/* Balance */}
       <div className="card balance-card">
         <div className="card-icon">
           <FaWallet />

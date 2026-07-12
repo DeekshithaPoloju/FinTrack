@@ -1,5 +1,3 @@
-import { Link, useNavigate } from "react-router-dom";
-
 import {
   FaHome,
   FaWallet,
@@ -10,75 +8,78 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 
 function Sidebar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Remove logged in user
     localStorage.removeItem("loggedInUser");
-
-    // Redirect to Login page
     navigate("/");
   };
 
   return (
     <aside className="sidebar">
+
       <div className="logo">
         <h2>FinTrack</h2>
       </div>
 
       <ul className="menu">
 
-        <Link to="/dashboard" className="menu-link">
-          <li className="active">
+        <li>
+          <NavLink to="/dashboard">
             <FaHome />
             <span>Dashboard</span>
-          </li>
-        </Link>
+          </NavLink>
+        </li>
 
-        <Link to="/transactions" className="menu-link">
-          <li>
+        <li>
+          <NavLink to="/transactions">
             <FaWallet />
             <span>Transactions</span>
-          </li>
-        </Link>
+          </NavLink>
+        </li>
 
-        <Link to="/analytics" className="menu-link">
-          <li>
+        <li>
+          <NavLink to="/analytics">
             <FaChartLine />
             <span>Analytics</span>
-          </li>
-        </Link>
+          </NavLink>
+        </li>
 
-        <Link to="/reports" className="menu-link">
-          <li>
+        <li>
+          <NavLink to="/reports">
             <FaFileAlt />
             <span>Reports</span>
-          </li>
-        </Link>
+          </NavLink>
+        </li>
 
-        <Link to="/profile" className="menu-link">
-          <li>
+        <li>
+          <NavLink to="/profile">
             <FaUser />
             <span>Profile</span>
-          </li>
-        </Link>
+          </NavLink>
+        </li>
 
-        <Link to="/settings" className="menu-link">
-          <li>
+        <li>
+          <NavLink to="/settings">
             <FaCog />
             <span>Settings</span>
-          </li>
-        </Link>
+          </NavLink>
+        </li>
 
       </ul>
 
-      <button className="logout-btn" onClick={handleLogout}>
+      <button
+        className="logout-btn"
+        onClick={handleLogout}
+      >
         <FaSignOutAlt />
         Logout
       </button>
+
     </aside>
   );
 }

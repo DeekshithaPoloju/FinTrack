@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
 import "../styles/Transactions.css";
 
 const incomeCategories = [
@@ -64,7 +66,7 @@ function Transactions() {
     }
 
     if (category === "Other" && customCategory.trim() === "") {
-      alert("Enter your custom category.");
+      alert("Please enter a custom category.");
       return;
     }
 
@@ -80,13 +82,13 @@ function Transactions() {
       payment,
     };
 
-    const updated = [...transactions, transaction];
+    const updatedTransactions = [...transactions, transaction];
 
-    setTransactions(updated);
+    setTransactions(updatedTransactions);
 
     localStorage.setItem(
       "transactions",
-      JSON.stringify(updated)
+      JSON.stringify(updatedTransactions)
     );
 
     setType("Income");
@@ -111,205 +113,253 @@ function Transactions() {
   };
 
   const filteredTransactions = transactions.filter((item) =>
-    item.category.toLowerCase().includes(search.toLowerCase())
+    item.category
+      .toLowerCase()
+      .includes(search.toLowerCase())
   );
 
   return (
-    <div className="transactions-page">
+    <div className="dashboard">
 
-      <h1>Transactions</h1>
+      <Sidebar />
 
-      <p className="subtitle">
-        Track every income and expense easily.
-      </p>
+      <div className="main-content">
 
-      <div className="transactions-layout">
+        <Navbar />
 
-        {/* LEFT */}
+        <div className="content">
 
-        <div className="form-card">
+          <div className="transactions-page">
 
-          <h2>Add Transaction</h2>
+            <h1>Transactions</h1>
 
-          <form onSubmit={handleSubmit}>
+            <p className="subtitle">
+              Manage your income and expenses efficiently.
+            </p>
 
-            <label>Type</label>
+            <div className="transactions-layout">
 
-            <select
-              value={type}
-              onChange={(e) => {
-                const value = e.target.value;
-                setType(value);
+              {/* LEFT CARD */}
 
-                if (value === "Income") {
-                  setCategory(incomeCategories[0]);
-                } else {
-                  setCategory(expenseCategories[0]);
-                }
+              <div className="form-card">
 
-                setCustomCategory("");
-              }}
-            >
-              <option>Income</option>
-              <option>Expense</option>
-            </select>
+                <h2>Add Transaction</h2>
 
-            <label>Category</label>
+                <form onSubmit={handleSubmit}>
 
-            <select
-              value={category}
-              onChange={(e) => {
-                setCategory(e.target.value);
+                  <label>Type</label>
 
-                if (e.target.value !== "Other") {
-                  setCustomCategory("");
-                }
-              }}
-            >
-              {(type === "Income"
-                ? incomeCategories
-                : expenseCategories
-              ).map((cat) => (
-                <option key={cat}>
-                  {cat}
-                </option>
-              ))}
-            </select>
+                  <select
+                    value={type}
+                    onChange={(e) => {
+                      const value = e.target.value;
 
-            {category === "Other" && (
-              <>
-                <label>Custom Category</label>
+                      setType(value);
+
+                      if (value === "Income") {
+                        setCategory(incomeCategories[0]);
+                      } else {
+                        setCategory(expenseCategories[0]);
+                      }
+
+                      setCustomCategory("");
+                    }}
+                  >
+                    <option>Income</option>
+                    <option>Expense</option>
+                  </select>
+
+                  <label>Category</label>
+
+                  <select
+                    value={category}
+                    onChange={(e) => {
+                      setCategory(e.target.value);
+
+                      if (e.target.value !== "Other") {
+                        setCustomCategory("");
+                      }
+                    }}
+                  >
+                    {(type === "Income"
+                      ? incomeCategories
+                      : expenseCategories
+                    ).map((item) => (
+                      <option
+                        key={item}
+                        value={item}
+                      >
+                        {item}
+                      </option>
+                    ))}
+                  </select>
+
+                  {category === "Other" && (
+                    <>
+                      <label>Custom Category</label>
+
+                      <input
+                        type="text"
+                        placeholder="Enter category"
+                        value={customCategory}
+                        onChange={(e) =>
+                          setCustomCategory(
+                            e.target.value
+                          )
+                        }
+                      />
+                    </>
+                  )}
+
+                  <label>Amount</label>
+
+                  <input
+                    type="number"
+                    placeholder="₹ Enter Amount"
+                    value={amount}
+                    onChange={(e) =>
+                      setAmount(e.target.value)
+                    }
+                  />
+
+                  <label>Date</label>
+
+                  <input
+                    type="date"
+                    value={date}
+                    onChange={(e) =>
+                      setDate(e.target.value)
+                    }
+                  />
+
+                  <label>Payment Method</label>
+
+                  <select
+                    value={payment}
+                    onChange={(e) =>
+                      setPayment(e.target.value)
+                    }
+                  >
+                    <option>UPI</option>
+                    <option>Cash</option>
+                    <option>Debit Card</option>
+                    <option>Credit Card</option>
+                    <option>Bank Transfer</option>
+                    <option>Net Banking</option>
+                  </select>
+
+                  <button
+                    type="submit"
+                    className="save-btn"
+                  >
+                    Add Transaction
+                  </button>
+
+                </form>
+
+              </div>
+                            {/* RIGHT CARD */}
+
+              <div className="table-card">
+
+                <h2>Recent Transactions</h2>
 
                 <input
                   type="text"
-                  placeholder="Enter category"
-                  value={customCategory}
-                  onChange={(e) =>
-                    setCustomCategory(e.target.value)
-                  }
+                  className="search-box"
+                  placeholder="Search category..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
                 />
-              </>
-            )}
 
-            <label>Amount</label>
+                <table>
 
-            <input
-              type="number"
-              placeholder="₹ Enter Amount"
-              value={amount}
-              onChange={(e) =>
-                setAmount(e.target.value)
-              }
-            />
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Type</th>
+                      <th>Category</th>
+                      <th>Amount</th>
+                      <th>Payment</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
 
-            <label>Date</label>
+                  <tbody>
 
-            <input
-              type="date"
-              value={date}
-              onChange={(e) =>
-                setDate(e.target.value)
-              }
-            />
+                    {filteredTransactions.length === 0 ? (
 
-            <label>Payment</label>
+                      <tr>
+                        <td colSpan="6" style={{ textAlign: "center" }}>
+                          No Transactions Found
+                        </td>
+                      </tr>
 
-            <select
-              value={payment}
-              onChange={(e) =>
-                setPayment(e.target.value)
-              }
-            >
-              <option>UPI</option>
-              <option>Cash</option>
-              <option>Debit Card</option>
-              <option>Credit Card</option>
-              <option>Bank Transfer</option>
-              <option>Net Banking</option>
-            </select>
+                    ) : (
 
-            <button className="save-btn">
-              + Add Transaction
-            </button>
+                      filteredTransactions.map((item) => (
 
-          </form>
+                        <tr key={item.id}>
 
-        </div>
+                          <td>{item.date}</td>
 
-        {/* RIGHT */}
+                          <td
+                            style={{
+                              color:
+                                item.type === "Income"
+                                  ? "#22c55e"
+                                  : "#ef4444",
+                              fontWeight: "600",
+                            }}
+                          >
+                            {item.type}
+                          </td>
 
-        <div className="table-card">
+                          <td>{item.category}</td>
 
-          <h2>Recent Transactions</h2>
+                          <td
+                            style={{
+                              color:
+                                item.type === "Income"
+                                  ? "#22c55e"
+                                  : "#ef4444",
+                              fontWeight: "600",
+                            }}
+                          >
+                            {item.type === "Income" ? "+" : "-"} ₹
+                            {item.amount.toLocaleString()}
+                          </td>
 
-          <input
-            className="search-box"
-            placeholder=" Search Category..."
-            value={search}
-            onChange={(e) =>
-              setSearch(e.target.value)
-            }
-          />
+                          <td>{item.payment}</td>
 
-          <table>
+                          <td>
 
-            <thead>
+                            <button
+                              className="delete-btn"
+                              onClick={() =>
+                                deleteTransaction(item.id)
+                              }
+                            >
+                              Delete
+                            </button>
 
-              <tr>
-                <th>Date</th>
-                <th>Category</th>
-                <th>Amount</th>
-                <th>Payment</th>
-                <th>Action</th>
-              </tr>
+                          </td>
 
-            </thead>
+                        </tr>
 
-            <tbody>
+                      ))
 
-              {filteredTransactions.length === 0 ? (
-                <tr>
-                  <td colSpan="5">
-                    No Transactions Found
-                  </td>
-                </tr>
-              ) : (
-                filteredTransactions.map((item) => (
-                  <tr key={item.id}>
+                    )}
 
-                    <td>{item.date}</td>
+                  </tbody>
 
-                    <td>{item.category}</td>
+                </table>
 
-                    <td>
-                      {item.type === "Income"
-                        ? "+"
-                        : "-"}
-                      ₹{item.amount}
-                    </td>
+              </div>
 
-                    <td>{item.payment}</td>
+            </div>
 
-                    <td>
-
-                      <button
-                        className="delete-btn"
-                        onClick={() =>
-                          deleteTransaction(item.id)
-                        }
-                      >
-                        Delete
-                      </button>
-
-                    </td>
-
-                  </tr>
-                ))
-              )}
-
-            </tbody>
-
-          </table>
+          </div>
 
         </div>
 

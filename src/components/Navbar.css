@@ -8,12 +8,51 @@
   padding: 0 30px;
 }
 
+.navbar h2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
 .nav-right {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
 .icon {
   font-size: 24px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  color: #facc15;
+}
+
+/* Profile Avatar */
+
+.navbar-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navbar-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+.navbar-avatar.default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: #4f46e5;
+  font-size: 18px;
+  font-weight: bold;
 }

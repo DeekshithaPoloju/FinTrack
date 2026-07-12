@@ -5,109 +5,119 @@ body{
 }
 
 .login-container{
-
-    height:100vh;
-
+    min-height:100vh;
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
+    background:linear-gradient(135deg,#eef2ff,#f8fafc);
 }
 
 .login-box{
-
-    width:380px;
-
+    width:400px;
     background:white;
-
-    padding:35px;
-
-    border-radius:10px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
-
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
 
 .login-box h1{
-
     text-align:center;
-
+    color:#4f46e5;
     margin-bottom:10px;
-
+    font-size:36px;
 }
 
 .login-box h3{
-
     text-align:center;
-
-    color:gray;
-
+    color:#64748b;
     margin-bottom:30px;
-
+    font-weight:500;
 }
 
 .login-box label{
-
     display:block;
-
     margin-top:15px;
-
-    margin-bottom:5px;
-
+    margin-bottom:8px;
+    font-weight:600;
+    color:#334155;
 }
 
 .login-box input{
-
     width:100%;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+    box-sizing:border-box;
+}
 
-    padding:12px;
+.login-box input:focus{
+    border-color:#7c3aed;
+    box-shadow:0 0 8px rgba(124,58,237,.25);
+}
 
-    border:1px solid #ccc;
+.forgot-password{
+    display:flex;
+    justify-content:flex-end;
+    margin:10px 0 20px;
+}
 
-    border-radius:5px;
+.forgot-password a{
+    color:#4f46e5;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
 
-    margin-bottom:10px;
-
+.forgot-password a:hover{
+    color:#7c3aed;
+    text-decoration:underline;
 }
 
 .login-box button{
-
     width:100%;
-
-    padding:12px;
-
-    margin-top:20px;
-
+    padding:14px;
+    margin-top:10px;
     border:none;
-
-    background:#4f46e5;
-
+    background:linear-gradient(135deg,#7c3aed,#9333ea);
     color:white;
-
     font-size:16px;
-
-    border-radius:5px;
-
+    font-weight:600;
+    border-radius:10px;
     cursor:pointer;
-
+    transition:.3s;
 }
 
-.login-box p{
+.login-box button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(124,58,237,.25);
+}
 
+.error{
+    margin-top:15px;
+    padding:12px;
+    background:#fee2e2;
+    color:#dc2626;
+    border-radius:8px;
     text-align:center;
-
-    margin-top:20px;
-
+    font-size:14px;
 }
 
-.login-box span{
+.signup-text{
+    text-align:center;
+    margin-top:20px;
+    color:#475569;
+}
 
+.link{
     color:#4f46e5;
+    text-decoration:none;
+    font-weight:600;
+}
 
-    cursor:pointer;
-
-    font-weight:bold;
-
+.link:hover{
+    color:#7c3aed;
+    text-decoration:underline;
 }

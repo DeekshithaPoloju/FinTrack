@@ -1,0 +1,129 @@
+.profile-page{
+    padding:30px;
+    background:#0f172a;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.profile-card{
+    width:100%;
+    max-width:900px;
+    background:#1e293b;
+    border-radius:24px;
+    padding:40px;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    border:1px solid rgba(255,255,255,.05);
+}
+
+.profile-card h1{
+    color:#fff;
+    font-size:36px;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.profile-image{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.profile-image img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #7c3aed;
+    margin-bottom:20px;
+    box-shadow:0 10px 25px rgba(124,58,237,.4);
+}
+
+.avatar{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#7c3aed,#9333ea);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.profile-image input[type="file"]{
+    color:white;
+    cursor:pointer;
+}
+
+.profile-form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.profile-form input{
+    width:100%;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #334155;
+    background:#0f172a;
+    color:white;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+.profile-form input:focus{
+    border-color:#7c3aed;
+    box-shadow:0 0 10px rgba(124,58,237,.3);
+}
+
+.profile-form button{
+    grid-column:1/3;
+    margin-top:10px;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7c3aed,#9333ea);
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.profile-form button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(124,58,237,.35);
+}
+
+@media(max-width:768px){
+
+.profile-card{
+    padding:25px;
+}
+
+.profile-form{
+    grid-template-columns:1fr;
+}
+
+.profile-form button{
+    grid-column:1;
+}
+
+.profile-card h1{
+    font-size:30px;
+}
+
+.profile-image img,
+.avatar{
+    width:130px;
+    height:130px;
+}
+
+}

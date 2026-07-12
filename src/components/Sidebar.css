@@ -65,3 +65,24 @@
     text-decoration:none;
     color:inherit;
 }
+
+.menu li a{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#94a3b8;
+    text-decoration:none;
+    padding:16px 18px;
+    border-radius:14px;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#7c3aed;
+    color:white;
+}
+
+.menu li a.active{
+    background:linear-gradient(90deg,#7c3aed,#9333ea);
+    color:white;
+}

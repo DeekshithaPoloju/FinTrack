@@ -1,0 +1,38 @@
+.recent-card{
+    margin-top:35px;
+    background:#1e293b;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.recent-card h2{
+    color:white;
+    margin-bottom:20px;
+}
+
+.recent-card table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.recent-card th{
+    text-align:left;
+    background:#0f172a;
+    color:white;
+    padding:15px;
+}
+
+.recent-card td{
+    padding:15px;
+    border-bottom:1px solid #334155;
+    color:#e2e8f0;
+}
+
+.recent-card tr:hover{
+    background:#334155;
+}
+
+.empty{
+    color:#94a3b8;
+}
