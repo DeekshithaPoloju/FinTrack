@@ -1,16 +1,105 @@
-# React + Vite
+# FinTrack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Personal Finance Management System built using React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- User Authentication (Login & Signup)
+- Forgot Password
+- Dashboard with Financial Summary
+- Income & Expense Tracking
+- Analytics Dashboard
+- Reports
+- Profile Management
+- Financial Goal Tracking
+- Settings
+- Local Storage Support
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- React Router DOM
+- Recharts
+- CSS3
+- Local Storage
+- Vite
+
+---
+
+## Project Structure
+
+```
+src
+│
+├── components
+├── pages
+├── styles
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/FinTrack.git
+```
+
+Go to the project
+
+```bash
+cd FinTrack
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the application
+
+```bash
+npm run dev
+```
+
+---
+
+## Screenshots
+
+Add screenshots inside a folder named `screenshots`.
+
+Example:
+
+- Login Page
+- Dashboard
+- Transactions
+- Analytics
+- Reports
+- Profile
+- Settings
+
+---
+
+## Future Enhancements
+
+- Node.js Backend
+- MongoDB Database
+- JWT Authentication
+- Email OTP Verification
+- Cloud Image Upload
+- Mobile Application
+- AI Financial Insights
+
+---
+
+## Author
+
+Developed by Poloju Deekshitha 
