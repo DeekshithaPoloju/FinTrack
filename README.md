@@ -1,45 +1,52 @@
 # FinTrack
 
-A modern Personal Finance Management System built using React.
+A modern **Personal Finance Management System** built using **React** and **Vite**. FinTrack helps users manage their income, expenses, financial goals, analytics, and reports through an intuitive and responsive interface.
 
 ---
 
 ## Features
 
 - User Authentication (Login & Signup)
-- Forgot Password
+- Forgot Password Flow
 - Dashboard with Financial Summary
 - Income & Expense Tracking
 - Analytics Dashboard
 - Reports
-- Profile Management
 - Financial Goal Tracking
+- Profile Management
 - Settings
 - Local Storage Support
 
 ---
 
-## Technologies Used
+## Tech Stack
 
 - React
+- Vite
 - React Router DOM
 - Recharts
+- React Icons
 - CSS3
 - Local Storage
-- Vite
 
 ---
 
-## Project Structure
+## Folder Structure
 
-```
-src
+```text
+FinTrack
 │
-├── components
-├── pages
-├── styles
-├── App.jsx
-└── main.jsx
+├── public
+├── src
+│   ├── components
+│   ├── pages
+│   ├── styles
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── package.json
+├── vite.config.js
+└── README.md
 ```
 
 ---
@@ -49,10 +56,10 @@ src
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/FinTrack.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/FinTrack.git
 ```
 
-Go to the project
+Go to the project folder
 
 ```bash
 cd FinTrack
@@ -64,7 +71,7 @@ Install dependencies
 npm install
 ```
 
-Run the application
+Run the project
 
 ```bash
 npm run dev
@@ -76,9 +83,7 @@ npm run dev
 
 Add screenshots inside a folder named `screenshots`.
 
-Example:
-
-- Login Page
+- Login
 - Dashboard
 - Transactions
 - Analytics
@@ -94,12 +99,18 @@ Example:
 - MongoDB Database
 - JWT Authentication
 - Email OTP Verification
-- Cloud Image Upload
+- Cloud Storage
+- AI-Based Financial Insights
 - Mobile Application
-- AI Financial Insights
 
 ---
 
 ## Author
 
-Developed by Poloju Deekshitha 
+**Developed by Deekshitha**
+
+---
+
+## License
+
+This project is developed for educational and learning purposes.
