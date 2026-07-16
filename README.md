@@ -109,8 +109,6 @@ Add screenshots inside a folder named `screenshots`.
 
 **Developed by Deekshitha**
 
----
-
 ## License
 
 This project is developed for educational and learning purposes.
