@@ -113,4 +113,4 @@ Add screenshots inside a folder named `screenshots`.
 
 ## License
 
-This project is developed for educational and learning purposes.hihihihihihihihihihihihihihihihihihihihihihhihihihihihihihihihihihihihihihihihihihihihihihihihihibibibibih
+This project is developed for educational and learning purposes.hihihihihihihihihihihihihihihihihihihihihihhihihihihihihihihihihihihihihihihihihihihihihi
