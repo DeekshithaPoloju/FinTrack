@@ -116,4 +116,3 @@ Add screenshots inside a folder named `screenshots`.
 This project is developed for educational and learning purposes.
 '
 '
-'
