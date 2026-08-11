@@ -42,5 +42,3 @@ pp
     "version": "1.0.0",
     "main": "pathToMain",
     "dependencies": {}
-  }",
-  "description": "description",
