@@ -66,6 +66,4 @@ p
 p
 p
 p
-parse
-parsep
-parse
+pars
