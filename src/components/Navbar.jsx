@@ -60,5 +60,3 @@ function Navbar() {
 
 export default Navbar;
 p
-p
-p
