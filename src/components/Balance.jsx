@@ -17,4 +17,4 @@ get p
 p
 p
 () {
-  return this
+  return
