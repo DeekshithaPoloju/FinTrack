@@ -17,5 +17,4 @@ get p
 p
 p
 () {
-  return this.second
-}
+  return this
