@@ -16,5 +16,4 @@ p
 get p
 p
 p
-() {
-  return
+()
