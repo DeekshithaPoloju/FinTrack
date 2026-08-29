@@ -8,3 +8,14 @@ function Balance() {
 }
 
 export default Balance;
+p
+p
+p
+p
+p
+get p
+p
+p
+() {
+  return this.second
+}
