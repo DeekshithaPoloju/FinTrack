@@ -16,4 +16,4 @@ function Charts() {
 
 export default Charts;
 ;
-4;
+4
