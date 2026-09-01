@@ -18,4 +18,3 @@ export default Charts;
 ;
 4;
 ;
-;
