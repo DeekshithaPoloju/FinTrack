@@ -74,4 +74,3 @@ export default FinancialGoal;
 klklklk
 lkljlklkl
 lklklklk
-lklklkkllk
