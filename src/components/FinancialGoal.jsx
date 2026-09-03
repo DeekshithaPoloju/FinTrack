@@ -70,5 +70,3 @@ function FinancialGoal() {
 
 export default FinancialGoal;
 
-'l'l'l
-klklklk
