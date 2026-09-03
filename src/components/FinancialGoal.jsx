@@ -72,5 +72,3 @@ export default FinancialGoal;
 l
 l
 l
-l
-ll
