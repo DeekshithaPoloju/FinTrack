@@ -71,5 +71,3 @@ function FinancialGoal() {
 export default FinancialGoal;
 dflkdfk
 df
-fd
-f
