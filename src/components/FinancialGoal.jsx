@@ -69,4 +69,4 @@ function FinancialGoal() {
 }
 
 export default FinancialGoal;
-entra bunty etlunav 
+entra bunty
