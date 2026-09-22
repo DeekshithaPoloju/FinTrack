@@ -16,4 +16,3 @@ function AddTransaction() {
 
 export default AddTransaction;
 l
-localStorage
