@@ -15,3 +15,7 @@ function AddTransaction() {
 }
 
 export default AddTransaction;
+l
+localStoragel
+l
+localStoragel
