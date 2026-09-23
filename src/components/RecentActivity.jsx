@@ -78,4 +78,3 @@ function RecentActivity() {
 }
 
 export default RecentActivity;
-l
