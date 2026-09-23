@@ -81,4 +81,3 @@ export default RecentActivity;
 l
 l
 l
-l
