@@ -12,4 +12,3 @@ export default TransactionItem;
 f
 f
 f
-f
