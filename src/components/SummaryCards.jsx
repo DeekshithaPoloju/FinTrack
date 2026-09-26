@@ -112,4 +112,3 @@ export default SummaryCards;
 h
 h
 h2h
-h
